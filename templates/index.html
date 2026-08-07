@@ -1,58 +1,52 @@
-import os
-from flask import Flask, render_template, request, jsonify
-from google import genai
-from google.genai import types
-from dotenv import load_dotenv
-
-load_dotenv()
-
-app = Flask(__name__, template_folder='../templates')
-
-# Initialize Google GenAI client
-api_key = os.getenv("GEMINI_API_KEY")
-client = genai.Client(api_key=api_key) if api_key else None
-
-SYSTEM_INSTRUCTION = """
-You are the official AI Shopping Assistant & Style Consultant for the fashion brand "Velora Style 14" (@velora_style14).
-
-Brand Profile & Mission:
-- Brand Handle: @velora_style14 on Instagram.
-- Core Vibe: Trendy, chic, aesthetic, accessible, and high-energy fashion.
-- Orders & Checkout: Placed directly via Instagram DM by sending an outfit screenshot, full name, contact number, shipping address, and size.
-- Delivery Window: 3 to 7 business days.
-- Exchange Policy: Size exchanges allowed within 48 hours of delivery if unworn with tags intact.
-
-Communication Guidelines:
-- Tone: Enthusiastic, encouraging, stylish, and polite.
-- Always use friendly emojis (✨, 🛍️, 👗, 💅, 🤍).
-- Always end with a clear call-to-action (e.g., "DM us on @velora_style14 to place your order!").
-"""
-
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-@app.route('/chat', methods=['POST'])
-def chat():
-    if not client:
-        return jsonify({"response": "Error: GEMINI_API_KEY environment variable is not set."}), 500
-
-    user_message = request.json.get('message', '')
-    if not user_message:
-        return jsonify({"response": "Please enter a valid message."}), 400
-
-    try:
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=user_message,
-            config=types.GenerateContentConfig(
-                system_instruction=SYSTEM_INSTRUCTION,
-                temperature=0.7,
-            )
-        )
-        return jsonify({"response": response.text})
-    except Exception as e:
-        return jsonify({"response": f"Something went wrong: {str(e)}"}), 500
-
-if __name__ == '__main__':
-    app.run(debug=True)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velora Style 14 AI Assistant</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f12; color: #fff; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .chat-card { width: 100%; max-width: 450px; height: 90vh; background: #18181c; border-radius: 16px; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #2a2a32; }
+    .chat-header { padding: 20px; background: #22222a; text-align: center; font-weight: bold; font-size: 1.2rem; letter-spacing: 1px; border-bottom: 1px solid #2a2a32; }
+    .chat-box { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
+    .msg { max-width: 80%; padding: 12px 16px; border-radius: 12px; line-height: 1.4; font-size: 0.95rem; }
+    .bot { background: #2a2a35; align-self: flex-start; color: #e1e1e6; }
+    .user { background: #d946ef; align-self: flex-end; color: #fff; }
+    .chat-input { display: flex; padding: 15px; background: #22222a; border-top: 1px solid #2a2a32; gap: 10px; }
+    input { flex: 1; background: #18181c; border: 1px solid #3f3f4e; color: #fff; padding: 12px; border-radius: 8px; outline: none; }
+    button { background: #d946ef; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+    button:hover { background: #c026d3; }
+  </style>
+</head>
+<body>
+  <div class="chat-card">
+    <div class="chat-header">VELORA STYLE 14 AI</div>
+    <div class="chat-box" id="box">
+      <div class="msg bot">Hey gorgeous! ✨ Welcome to Velora Style 14. How can I assist your wardrobe today? 🛍️</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="msg" placeholder="Ask about styles, delivery, or sizes..." onkeydown="if(event.key==='Enter') send()" />
+      <button onclick="send()">Send</button>
+    </div>
+  </div>
+  <script>
+    async function send() {
+      const input = document.getElementById('msg');
+      const box = document.getElementById('box');
+      const text = input.value.trim();
+      if(!text) return;
+      box.innerHTML += `<div class="msg user">${text}</div>`;
+      input.value = '';
+      box.scrollTop = box.scrollHeight;
+      try {
+        const res = await fetch('/chat', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({message: text}) });
+        const data = await res.json();
+        box.innerHTML += `<div class="msg bot">${data.response}</div>`;
+      } catch(e) {
+        box.innerHTML += `<div class="msg bot">Something went wrong. Please try again!</div>`;
+      }
+      box.scrollTop = box.scrollHeight;
+    }
+  </script>
+</body>
+</html>
