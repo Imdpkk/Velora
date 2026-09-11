@@ -14,16 +14,16 @@ smart product discovery, and an AI-powered personal stylist.
 </a>
 
 <a href="https://github.com/Imdpkk/Velora">
-  <img src="https://img.shields.io/badge/GITHUB-VIEW%20SOURCE-222222?style=for-the-badge&logo=github" alt="GitHub">
+  <img src="https://img.shields.io/badge/GITHUB-VIEW%20SOURCE-222222?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
 </a>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/Python-3.10+-111111?style=flat-square&logo=python&logoColor=white">
-<img src="https://img.shields.io/badge/Flask-Backend-111111?style=flat-square&logo=flask&logoColor=white">
-<img src="https://img.shields.io/badge/Google%20Gemini-AI-111111?style=flat-square&logo=google&logoColor=white">
-<img src="https://img.shields.io/badge/JavaScript-Frontend-111111?style=flat-square&logo=javascript&logoColor=white">
-<img src="https://img.shields.io/badge/Vercel-Deployed-111111?style=flat-square&logo=vercel&logoColor=white">
+<img src="https://img.shields.io/badge/Python-3.10+-111111?style=flat-square&logo=python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/Flask-Backend-111111?style=flat-square&logo=flask&logoColor=white" alt="Flask">
+<img src="https://img.shields.io/badge/Google%20Gemini-AI-111111?style=flat-square&logo=google&logoColor=white" alt="Gemini">
+<img src="https://img.shields.io/badge/JavaScript-Frontend-111111?style=flat-square&logo=javascript&logoColor=white" alt="JavaScript">
+<img src="https://img.shields.io/badge/Vercel-Deployed-111111?style=flat-square&logo=vercel&logoColor=white" alt="Vercel">
 
 </div>
 
@@ -34,92 +34,99 @@ smart product discovery, and an AI-powered personal stylist.
 **Velora Style 14** is an AI-powered fashion storefront designed to bring
 together modern fashion discovery and conversational styling.
 
-Instead of simply browsing products, visitors can interact with **Velora AI**
-to discover outfits, explore products, ask fashion questions, and get
-personalized styling suggestions.
+Visitors can explore curated products, discover styles based on occasions
+and moods, search the catalog, and interact with **Velora AI** for fashion
+recommendations.
 
-The project combines a clean editorial fashion interface with a lightweight
-Flask backend and Google's Gemini AI.
+The project combines a premium editorial-style frontend with a lightweight
+**Flask backend**, a product catalog, and **Google Gemini AI**.
 
 ---
 
 # ✦ Experience
 
-Velora is designed around four simple ideas:
+Velora is built around four simple experiences:
 
 | Experience | Description |
 |---|---|
 | 🛍️ **Discover** | Browse curated fashion collections |
 | ✦ **Explore** | Find products by category, mood, occasion, and trends |
 | 🤖 **Ask AI** | Get fashion recommendations through Velora AI |
-| ♡ **Connect** | Discover products and connect through Instagram |
+| ♡ **Connect** | Discover products and connect with the brand through Instagram |
 
 ---
 
-# ✦ Live Website
-
-### Visit the live Velora experience
+# ✦ Live Experience
 
 <div align="center">
 
+### Explore Velora Style 14
+
 <a href="https://velora-xi-woad.vercel.app/">
-
-<img src="https://img.shields.io/badge/OPEN%20VELORA%20STYLE%2014-111111?style=for-the-badge" alt="Open Velora">
-
+  <img src="https://img.shields.io/badge/OPEN%20VELORA%20STYLE%2014-111111?style=for-the-badge" alt="Open Velora Style 14">
 </a>
 
-</div>
+<br><br>
+
+**Live Website:**  
+<a href="https://velora-xi-woad.vercel.app/">velora-xi-woad.vercel.app</a>
 
 <br>
 
-**Live URL:**  
-https://velora-xi-woad.vercel.app/
-
 **Instagram:**  
-https://www.instagram.com/velora_style14
+<a href="https://www.instagram.com/velora_style14">@velora_style14</a>
+
+</div>
 
 ---
 
 # ✦ What Makes Velora Different?
 
-Traditional fashion websites make users search through products.
+Traditional fashion websites rely heavily on menus, filters, and product
+search.
 
-Velora adds a conversational layer.
+Velora adds a conversational layer to the shopping experience.
 
 A visitor can simply ask:
 
 > "What should I wear to a party?"
 
-or
+or:
 
 > "Show me something casual."
 
-or
+or:
 
 > "I need an office outfit."
 
-Velora AI understands the request and connects it with the available
-fashion catalog.
+Velora AI interprets the request and connects it with the available fashion
+catalog to provide a relevant recommendation.
 
-The goal is simple:
+### The idea is simple:
 
-**Less searching. More discovering.**
+<div align="center">
+
+## **Less Searching. More Discovering.**
+
+</div>
 
 ---
 
 # ✦ Key Features
 
-### 🤖 AI Fashion Stylist
+## 🤖 AI Fashion Stylist
 
-Powered by Google Gemini, Velora AI can understand natural-language
-fashion requests and provide relevant styling guidance.
+Velora AI uses **Google Gemini** to understand natural-language fashion
+requests and provide styling guidance based on the available catalog.
 
-### 🛍️ Curated Product Catalog
+---
 
-The website currently includes dresses, shirts, jeans, and co-ord sets
-with product information such as:
+## 🛍️ Curated Product Catalog
+
+Each product can contain:
 
 - Product name
+- Category
 - Price
 - Available sizes
 - Colors
@@ -128,9 +135,11 @@ with product information such as:
 - Description
 - Product image
 
-### ✦ Smart Product Discovery
+---
 
-Products can be explored through:
+## ✦ Smart Product Discovery
+
+Explore products through:
 
 - New Arrivals
 - Trending styles
@@ -140,45 +149,57 @@ Products can be explored through:
 - Price ranges
 - Fashion moods
 
-### 🎀 Shop by Mood
+---
 
-Visitors can discover styles based on different occasions and aesthetics:
+## 🎀 Shop by Mood
 
-- Party Girl
-- Casual Chic
-- Work Edit
-- Vacation Mode
+Discover styles based on different occasions and aesthetics:
 
-### 🔎 Product Search
+| Mood | Style |
+|---|---|
+| ✦ **Party Girl** | Evening and party looks |
+| ♡ **Casual Chic** | Relaxed everyday outfits |
+| ◇ **Work Edit** | Office and semi-formal styles |
+| ○ **Vacation Mode** | Vacation and brunch-ready looks |
 
-Users can quickly search the catalog for products, categories, colors,
-and fashion-related keywords.
+---
 
-### ♡ Wishlist Interaction
+## 🔎 Product Search
 
-Products can be marked as favorites directly from the storefront.
+Search the fashion catalog using product names, categories, colors,
+occasions, and other fashion-related keywords.
 
-### 📱 Responsive Design
+---
 
-The interface is designed to work across:
+## ♡ Wishlist
+
+Products can be marked as favorites directly from the storefront interface.
+
+---
+
+## 📱 Responsive Design
+
+The website is designed for:
 
 - Desktop
 - Laptop
 - Tablet
 - Mobile
 
-### 📸 Instagram Ordering
+---
 
-The current experience connects customers with the brand through Instagram
-for product inquiries and ordering.
+## 📸 Instagram Connection
+
+Customers can connect with the brand through Instagram for product
+inquiries and ordering.
 
 ---
 
 # ✦ AI Stylist
 
-The AI layer is the core experience of Velora.
+The AI Stylist is the conversational core of Velora.
 
-### Example conversation
+### Example — Party Look
 
 **Customer**
 
@@ -191,7 +212,7 @@ The AI layer is the core experience of Velora.
 
 ---
 
-### Another example
+### Example — Casual Look
 
 **Customer**
 
@@ -204,60 +225,26 @@ The AI layer is the core experience of Velora.
 
 ---
 
-### AI Flow
+# ✦ AI Architecture
 
 ```text
-                    CUSTOMER
-                       │
-                       ▼
-                Fashion Request
-                       │
-                       ▼
-                 Flask /chat
-                       │
-             ┌─────────┴─────────┐
-             │                   │
-             ▼                   ▼
-       Local Catalog        Gemini AI
-             │                   │
-             └─────────┬─────────┘
-                       │
-                       ▼
-                 Velora AI
-                       │
-                       ▼
-              Fashion Response
-<div align="center">
-
-## ✦ Created & Developed By
-
-### **Deepak Vishwakarma**
-
-**Software Engineer**  
-Cloud & DevOps Enthusiast
-
-<br>
-
-<a href="https://github.com/Imdpkk">
-  <img src="https://img.shields.io/badge/GitHub-Imdpkk-111111?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-</a>
-
-<br><br>
-
-*Building modern web experiences with Cloud, DevOps & AI.*
-
-<br>
-
-**VELORA STYLE 14**
-
-*Fashion, reimagined with AI.*
-
-</div>
-
----
-
-<div align="center">
-
-**© 2026 Velora Style 14 · Created & Developed by Deepak Vishwakarma**
-
-</div>
+                         CUSTOMER
+                            │
+                            ▼
+                    Fashion Request
+                            │
+                            ▼
+                       Flask /chat
+                            │
+                 ┌──────────┴──────────┐
+                 │                     │
+                 ▼                     ▼
+           Product Catalog        Gemini AI
+                 │                     │
+                 └──────────┬──────────┘
+                            │
+                            ▼
+                        Velora AI
+                            │
+                            ▼
+                    Fashion Response
