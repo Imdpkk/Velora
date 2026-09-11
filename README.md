@@ -227,3 +227,39 @@ The AI layer is the core experience of Velora.
                        │
                        ▼
               Fashion Response
+---
+
+<div align="center">
+
+## ✦ Created & Developed By
+
+### **Deepak Vishwakarma**
+
+**Software Engineer**  
+Cloud & DevOps Enthusiast
+
+<br>
+
+<a href="https://github.com/Imdpkk">
+  <img src="https://img.shields.io/badge/GitHub-Imdpkk-111111?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+</a>
+
+<br><br>
+
+*Building modern web experiences with Cloud, DevOps & AI.*
+
+<br>
+
+**VELORA STYLE 14**
+
+*Fashion, reimagined with AI.*
+
+</div>
+
+---
+
+<div align="center">
+
+**© 2026 Velora Style 14 · Created & Developed by Deepak Vishwakarma**
+
+</div>
