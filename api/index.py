@@ -1,57 +1,100 @@
 import os
 from flask import Flask, render_template, request, jsonify
-from google import genai
-from google.genai import types
 from dotenv import load_dotenv
+
+from api.chatbot import chatbot
+from config.constants import WELCOME_MESSAGE
+
+# ==========================================
+# Load Environment Variables
+# ==========================================
 
 load_dotenv()
 
-app = Flask(__name__, template_folder='../templates')
+# ==========================================
+# Flask App
+# ==========================================
 
-api_key = os.getenv("GEMINI_API_KEY")
-client = genai.Client(api_key=api_key) if api_key else None
+app = Flask(
+    __name__,
+    template_folder="../templates",
+    static_folder="../static"
+)
 
-SYSTEM_INSTRUCTION = """
-You are the official AI Shopping Assistant & Style Consultant for the fashion brand "Velora Style 14" (@velora_style14).
+# ==========================================
+# Home
+# ==========================================
 
-Brand Profile & Mission:
-- Brand Handle: @velora_style14 on Instagram.
-- Core Vibe: Trendy, chic, aesthetic, accessible, and high-energy fashion.
-- Orders & Checkout: Placed directly via Instagram DM by sending an outfit screenshot, full name, contact number, shipping address, and size.
-- Delivery Window: 3 to 7 business days.
-- Exchange Policy: Size exchanges allowed within 48 hours of delivery if unworn with tags intact.
-
-Communication Guidelines:
-- Tone: Enthusiastic, encouraging, stylish, and polite.
-- Always use friendly emojis (✨, 🛍️, 👗, 💅, 💖).
-- Always end with a clear call-to-action (e.g., "DM us on @velora_style14 to place your order!").
-"""
-
-@app.route('/')
+@app.route("/")
 def home():
-    return render_template('index.html')
+    return render_template(
+        "index.html",
+        welcome_message=WELCOME_MESSAGE
+    )
 
-@app.route('/chat', methods=['POST'])
+# ==========================================
+# Chat API
+# ==========================================
+
+@app.route("/chat", methods=["POST"])
 def chat():
-    if not client:
-        return jsonify({"response": "Error: GEMINI_API_KEY environment variable is not set."}), 500
-
-    user_message = request.json.get('message', '')
-    if not user_message:
-        return jsonify({"response": "Please enter a valid message."}), 400
 
     try:
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=user_message,
-            config=types.GenerateContentConfig(
-                system_instruction=SYSTEM_INSTRUCTION,
-                temperature=0.7,
-            )
-        )
-        return jsonify({"response": response.text})
-    except Exception as e:
-        return jsonify({"response": f"Something went wrong: {str(e)}"}), 500
 
-if __name__ == '__main__':
-    app.run(debug=True)
+        data = request.get_json()
+
+        if not data:
+            return jsonify({
+                "success": False,
+                "response": "Invalid request."
+            }), 400
+
+        message = data.get("message", "").strip()
+
+        if not message:
+
+            return jsonify({
+                "success": False,
+                "response": "Please enter a message."
+            })
+
+        reply = chatbot.generate_response(message)
+
+        return jsonify({
+            "success": True,
+            "response": reply
+        })
+
+    except Exception as e:
+
+        print("SERVER ERROR:", e)
+
+        return jsonify({
+            "success": False,
+            "response": "Something went wrong. Please try again."
+        }), 500
+
+# ==========================================
+# Health Check
+# ==========================================
+
+@app.route("/health")
+def health():
+
+    return jsonify({
+        "status": "running",
+        "service": "Velora AI",
+        "version": "2.0"
+    })
+
+# ==========================================
+# Start Server
+# ==========================================
+
+if __name__ == "__main__":
+
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        debug=True
+    )

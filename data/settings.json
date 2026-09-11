@@ -1,0 +1,22 @@
+{
+  "brand": {
+    "name": "Velora Style 14",
+    "instagram": "@velora_style14",
+    "website": "",
+    "currency": "INR"
+  },
+  "business": {
+    "delivery": "3-7 Business Days",
+    "exchange": "Exchange available within 48 hours of delivery.",
+    "payment": [
+      "UPI",
+      "Bank Transfer",
+      "Cash on Delivery (if available)"
+    ]
+  },
+  "assistant": {
+    "name": "Velora AI Stylist",
+    "language": "English",
+    "max_history": 8
+  }
+}

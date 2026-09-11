@@ -1,0 +1,26 @@
+[
+  {
+    "question": "delivery",
+    "answer": "🚚 We deliver across India within 3-7 business days."
+  },
+  {
+    "question": "exchange",
+    "answer": "🔄 Size exchange is available within 48 hours after delivery if the product is unused with original tags."
+  },
+  {
+    "question": "payment",
+    "answer": "💳 We accept UPI, Bank Transfer and Cash on Delivery (where available)."
+  },
+  {
+    "question": "order",
+    "answer": "🛍️ To place an order, send us the product screenshot, your name, contact number, shipping address and preferred size via Instagram DM."
+  },
+  {
+    "question": "size",
+    "answer": "📏 Available sizes depend on the product. Most items are available in S, M, L and XL."
+  },
+  {
+    "question": "return",
+    "answer": "❌ We currently do not offer returns. Only size exchanges are available as per our exchange policy."
+  }
+]

@@ -1,52 +1,1341 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Velora Style 14 AI Assistant</title>
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f12; color: #fff; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
-    .chat-card { width: 100%; max-width: 450px; height: 90vh; background: #18181c; border-radius: 16px; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #2a2a32; }
-    .chat-header { padding: 20px; background: #22222a; text-align: center; font-weight: bold; font-size: 1.2rem; letter-spacing: 1px; border-bottom: 1px solid #2a2a32; }
-    .chat-box { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
-    .msg { max-width: 80%; padding: 12px 16px; border-radius: 12px; line-height: 1.4; font-size: 0.95rem; }
-    .bot { background: #2a2a35; align-self: flex-start; color: #e1e1e6; }
-    .user { background: #d946ef; align-self: flex-end; color: #fff; }
-    .chat-input { display: flex; padding: 15px; background: #22222a; border-top: 1px solid #2a2a32; gap: 10px; }
-    input { flex: 1; background: #18181c; border: 1px solid #3f3f4e; color: #fff; padding: 12px; border-radius: 8px; outline: none; }
-    button { background: #d946ef; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; }
-    button:hover { background: #c026d3; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Velora Style 14 — Discover modern women's fashion, new arrivals and trending looks.">
+
+    <title>Velora Style 14 | Women's Fashion</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-  <div class="chat-card">
-    <div class="chat-header">VELORA STYLE 14 AI</div>
-    <div class="chat-box" id="box">
-      <div class="msg bot">Hey gorgeous! ✨ Welcome to Velora Style 14. How can I assist your wardrobe today? 🛍️</div>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="nav-container">
+
+        <a href="#home" class="brand-logo">
+            <span class="brand-main">VELORA</span>
+            <span class="brand-sub">STYLE 14</span>
+        </a>
+
+        <nav class="main-nav" id="mainNav">
+
+            <a href="#home" class="nav-link active">
+                Home
+            </a>
+
+            <a href="#new-arrivals" class="nav-link">
+                New Arrivals
+            </a>
+
+            <a href="#trends" class="nav-link">
+                Trends
+            </a>
+
+            <a href="#collections" class="nav-link">
+                Collections
+            </a>
+
+            <a href="#about" class="nav-link">
+                About
+            </a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <button class="icon-button" id="searchButton"
+                    aria-label="Search products">
+                🔍
+            </button>
+
+            <button class="icon-button bag-button"
+                    aria-label="Shopping bag">
+                🛍️
+                <span class="bag-count">0</span>
+            </button>
+
+            <button class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open menu">
+                ☰
+            </button>
+
+        </div>
+
     </div>
-    <div class="chat-input">
-      <input type="text" id="msg" placeholder="Ask about styles, delivery, or sizes..." onkeydown="if(event.key==='Enter') send()" />
-      <button onclick="send()">Send</button>
+
+</header>
+
+
+<!-- =========================================================
+     SEARCH OVERLAY
+========================================================= -->
+
+<div class="search-overlay" id="searchOverlay">
+
+    <div class="search-box">
+
+        <button class="close-search" id="closeSearch">
+            ×
+        </button>
+
+        <span class="search-label">
+            SEARCH VELORA
+        </span>
+
+        <div class="search-input-wrap">
+
+            <input
+                type="search"
+                id="productSearch"
+                placeholder="Search dresses, tops, jeans..."
+                autocomplete="off"
+            >
+
+            <button id="searchSubmit">
+                Search
+            </button>
+
+        </div>
+
+        <div id="searchResults" class="search-results"></div>
+
     </div>
-  </div>
-  <script>
-    async function send() {
-      const input = document.getElementById('msg');
-      const box = document.getElementById('box');
-      const text = input.value.trim();
-      if(!text) return;
-      box.innerHTML += `<div class="msg user">${text}</div>`;
-      input.value = '';
-      box.scrollTop = box.scrollHeight;
-      try {
-        const res = await fetch('/chat', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({message: text}) });
-        const data = await res.json();
-        box.innerHTML += `<div class="msg bot">${data.response}</div>`;
-      } catch(e) {
-        box.innerHTML += `<div class="msg bot">Something went wrong. Please try again!</div>`;
-      }
-      box.scrollTop = box.scrollHeight;
-    }
-  </script>
+
+</div>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero-section" id="home">
+
+    <div class="hero-content">
+
+        <span class="eyebrow">
+            WOMEN'S FASHION • 2026
+        </span>
+
+        <h1>
+            Dress the way
+            <br>
+            <em>you feel.</em>
+        </h1>
+
+        <p>
+            Discover effortless styles, timeless essentials
+            and statement looks made for every version of you.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#new-arrivals" class="primary-button">
+                Shop New Arrivals
+                <span>→</span>
+            </a>
+
+            <a href="#trends" class="secondary-button">
+                Explore Trends
+            </a>
+
+        </div>
+
+        <div class="hero-note">
+            <span>✦</span>
+            Curated for modern women
+        </div>
+
+    </div>
+
+    <div class="hero-visual">
+
+        <div class="hero-image-frame">
+
+            <img
+                src="{{ url_for('static', filename='images/pink_floral.jpg') }}"
+                alt="Pink Floral Maxi Dress"
+            >
+
+            <div class="hero-floating-card">
+
+                <span class="floating-small">
+                    FEATURED LOOK
+                </span>
+
+                <strong>
+                    Pink Floral
+                    <br>
+                    Maxi Dress
+                </strong>
+
+                <span class="floating-price">
+                    ₹1,699
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="hero-circle">
+            NEW
+            <br>
+            DROP
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BRAND STRIP
+========================================================= -->
+
+<section class="brand-strip">
+
+    <div>
+        ✦ WOMEN'S ONLY
+    </div>
+
+    <div>
+        ✦ NEW SEASON
+    </div>
+
+    <div>
+        ✦ EASY EVERYDAY STYLE
+    </div>
+
+    <div>
+        ✦ PARTY EDIT
+    </div>
+
+    <div>
+        ✦ CURATED WITH LOVE
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     NEW ARRIVALS
+========================================================= -->
+
+<section class="products-section" id="new-arrivals">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="eyebrow">
+                JUST DROPPED
+            </span>
+
+            <h2>
+                New Arrivals
+            </h2>
+
+        </div>
+
+        <p>
+            Fresh pieces to make your wardrobe
+            feel new again.
+        </p>
+
+    </div>
+
+
+    <div class="category-tabs" id="categoryTabs">
+
+        <button class="category-tab active"
+                data-category="all">
+            All
+        </button>
+
+        <button class="category-tab"
+                data-category="Dress">
+            Dresses
+        </button>
+
+        <button class="category-tab"
+                data-category="Top">
+            Tops
+        </button>
+
+        <button class="category-tab"
+                data-category="Jeans">
+            Jeans
+        </button>
+
+        <button class="category-tab"
+                data-category="Co-ord Set">
+            Co-ords
+        </button>
+
+    </div>
+
+
+    <div class="product-grid" id="productGrid">
+
+        <!-- Product 1 -->
+
+        <article class="product-card"
+                 data-category="Dress"
+                 data-product-id="1">
+
+            <div class="product-image-wrap">
+
+                <img
+                    src="{{ url_for('static', filename='images/black_satin.jpg') }}"
+                    alt="Black Satin Midi Dress"
+                    class="product-image"
+                >
+
+                <span class="product-badge">
+                    BESTSELLER
+                </span>
+
+                <button class="product-wishlist"
+                        aria-label="Add to wishlist">
+                    ♡
+                </button>
+
+                <button class="quick-view"
+                        data-product-id="1">
+                    Quick View
+                </button>
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    DRESS
+                </span>
+
+                <h3>
+                    Black Satin Midi Dress
+                </h3>
+
+                <div class="product-bottom">
+
+                    <span class="product-price">
+                        ₹1,499
+                    </span>
+
+                    <span class="product-colors">
+                        ● Black
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- Product 2 -->
+
+        <article class="product-card"
+                 data-category="Dress"
+                 data-product-id="2">
+
+            <div class="product-image-wrap">
+
+                <img
+                    src="{{ url_for('static', filename='images/pink_floral.jpg') }}"
+                    alt="Pink Floral Maxi Dress"
+                    class="product-image"
+                >
+
+                <span class="product-badge soft">
+                    NEW
+                </span>
+
+                <button class="product-wishlist"
+                        aria-label="Add to wishlist">
+                    ♡
+                </button>
+
+                <button class="quick-view"
+                        data-product-id="2">
+                    Quick View
+                </button>
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    DRESS
+                </span>
+
+                <h3>
+                    Pink Floral Maxi Dress
+                </h3>
+
+                <div class="product-bottom">
+
+                    <span class="product-price">
+                        ₹1,699
+                    </span>
+
+                    <span class="product-colors">
+                        ● Pink
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- Product 3 -->
+
+        <article class="product-card"
+                 data-category="Top"
+                 data-product-id="3">
+
+            <div class="product-image-wrap">
+
+                <img
+                    src="{{ url_for('static', filename='images/white_shirt.jpg') }}"
+                    alt="Oversized White Shirt"
+                    class="product-image"
+                >
+
+                <span class="product-badge soft">
+                    EVERYDAY
+                </span>
+
+                <button class="product-wishlist"
+                        aria-label="Add to wishlist">
+                    ♡
+                </button>
+
+                <button class="quick-view"
+                        data-product-id="3">
+                    Quick View
+                </button>
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    TOP
+                </span>
+
+                <h3>
+                    Oversized White Shirt
+                </h3>
+
+                <div class="product-bottom">
+
+                    <span class="product-price">
+                        ₹899
+                    </span>
+
+                    <span class="product-colors">
+                        ● White
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- Product 4 -->
+
+        <article class="product-card"
+                 data-category="Jeans"
+                 data-product-id="4">
+
+            <div class="product-image-wrap">
+
+                <img
+                    src="{{ url_for('static', filename='images/blue_jeans.jpg') }}"
+                    alt="Blue High Waist Jeans"
+                    class="product-image"
+                >
+
+                <span class="product-badge soft">
+                    ESSENTIAL
+                </span>
+
+                <button class="product-wishlist"
+                        aria-label="Add to wishlist">
+                    ♡
+                </button>
+
+                <button class="quick-view"
+                        data-product-id="4">
+                    Quick View
+                </button>
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    JEANS
+                </span>
+
+                <h3>
+                    Blue High Waist Jeans
+                </h3>
+
+                <div class="product-bottom">
+
+                    <span class="product-price">
+                        ₹1,299
+                    </span>
+
+                    <span class="product-colors">
+                        ● Blue
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- Product 5 -->
+
+        <article class="product-card"
+                 data-category="Co-ord Set"
+                 data-product-id="5">
+
+            <div class="product-image-wrap">
+
+                <img
+                    src="{{ url_for('static', filename='images/beige_coord.jpg') }}"
+                    alt="Beige Co-ord Set"
+                    class="product-image"
+                >
+
+                <span class="product-badge">
+                    EDITOR'S PICK
+                </span>
+
+                <button class="product-wishlist"
+                        aria-label="Add to wishlist">
+                    ♡
+                </button>
+
+                <button class="quick-view"
+                        data-product-id="5">
+                    Quick View
+                </button>
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    CO-ORD SET
+                </span>
+
+                <h3>
+                    Beige Co-ord Set
+                </h3>
+
+                <div class="product-bottom">
+
+                    <span class="product-price">
+                        ₹1,999
+                    </span>
+
+                    <span class="product-colors">
+                        ● Beige
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TRENDING
+========================================================= -->
+
+<section class="trends-section" id="trends">
+
+    <div class="section-heading centered">
+
+        <span class="eyebrow">
+            WHAT'S IN
+        </span>
+
+        <h2>
+            Trending Now
+        </h2>
+
+        <p>
+            Looks we're loving right now.
+        </p>
+
+    </div>
+
+
+    <div class="trend-grid">
+
+        <article class="trend-card trend-large">
+
+            <img
+                src="{{ url_for('static', filename='images/black_satin.jpg') }}"
+                alt="Party fashion"
+            >
+
+            <div class="trend-overlay">
+
+                <span>
+                    01 • PARTY EDIT
+                </span>
+
+                <h3>
+                    After-dark
+                    <br>
+                    energy.
+                </h3>
+
+                <button class="trend-link"
+                        data-category-filter="Dress">
+                    Shop Party Looks →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="trend-card">
+
+            <img
+                src="{{ url_for('static', filename='images/white_shirt.jpg') }}"
+                alt="Casual fashion"
+            >
+
+            <div class="trend-overlay">
+
+                <span>
+                    02 • EVERYDAY
+                </span>
+
+                <h3>
+                    Effortlessly
+                    <br>
+                    cool.
+                </h3>
+
+                <button class="trend-link"
+                        data-category-filter="Top">
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="trend-card">
+
+            <img
+                src="{{ url_for('static', filename='images/beige_coord.jpg') }}"
+                alt="Office fashion"
+            >
+
+            <div class="trend-overlay">
+
+                <span>
+                    03 • OFFICE EDIT
+                </span>
+
+                <h3>
+                    Power,
+                    <br>
+                    but make it chic.
+                </h3>
+
+                <button class="trend-link"
+                        data-category-filter="Co-ord Set">
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CATEGORIES
+========================================================= -->
+
+<section class="collections-section"
+         id="collections">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="eyebrow">
+                FIND YOUR VIBE
+            </span>
+
+            <h2>
+                Shop by Mood
+            </h2>
+
+        </div>
+
+        <p>
+            Whatever the plan, we've got the look.
+        </p>
+
+    </div>
+
+
+    <div class="mood-grid">
+
+        <button class="mood-card"
+                data-mood="Party">
+
+            <span class="mood-number">
+                01
+            </span>
+
+            <strong>
+                Party Girl
+            </strong>
+
+            <small>
+                Dresses • Statement Looks
+            </small>
+
+            <span class="mood-arrow">
+                ↗
+            </span>
+
+        </button>
+
+
+        <button class="mood-card"
+                data-mood="Casual">
+
+            <span class="mood-number">
+                02
+            </span>
+
+            <strong>
+                Casual Chic
+            </strong>
+
+            <small>
+                Shirts • Denim • Essentials
+            </small>
+
+            <span class="mood-arrow">
+                ↗
+            </span>
+
+        </button>
+
+
+        <button class="mood-card"
+                data-mood="Office">
+
+            <span class="mood-number">
+                03
+            </span>
+
+            <strong>
+                Work Edit
+            </strong>
+
+            <small>
+                Co-ords • Smart Styles
+            </small>
+
+            <span class="mood-arrow">
+                ↗
+            </span>
+
+        </button>
+
+
+        <button class="mood-card"
+                data-mood="Vacation">
+
+            <span class="mood-number">
+                04
+            </span>
+
+            <strong>
+                Vacation Mode
+            </strong>
+
+            <small>
+                Florals • Easy Silhouettes
+            </small>
+
+            <span class="mood-arrow">
+                ↗
+            </span>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     AI STYLIST CTA
+========================================================= -->
+
+<section class="ai-banner">
+
+    <div class="ai-banner-content">
+
+        <span class="eyebrow">
+            YOUR PERSONAL STYLIST
+        </span>
+
+        <h2>
+            Not sure what
+            <br>
+            to wear?
+        </h2>
+
+        <p>
+            Tell Velora AI where you're going,
+            your vibe and your budget.
+            We'll help you find the look.
+        </p>
+
+        <button class="primary-button"
+                id="openAiFromBanner">
+            ✨ Ask Velora AI
+            <span>→</span>
+        </button>
+
+    </div>
+
+
+    <div class="ai-decoration">
+
+        <div class="ai-orbit">
+            ✦
+        </div>
+
+        <div class="ai-fashion-word">
+            STYLE
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="about-section" id="about">
+
+    <div class="about-content">
+
+        <span class="eyebrow">
+            OUR STORY
+        </span>
+
+        <h2>
+            Fashion should feel
+            <em>like you.</em>
+        </h2>
+
+        <p>
+            Velora Style 14 is a women's fashion destination
+            built around effortless style, confident choices
+            and pieces you actually want to wear.
+        </p>
+
+        <p>
+            From everyday essentials to your next statement
+            outfit, we're here to make getting dressed
+            a little more exciting.
+        </p>
+
+    </div>
+
+    <div class="about-stats">
+
+        <div>
+            <strong>
+                01
+            </strong>
+            <span>
+                Women's Fashion
+            </span>
+        </div>
+
+        <div>
+            <strong>
+                02
+            </strong>
+            <span>
+                AI Styling
+            </span>
+        </div>
+
+        <div>
+            <strong>
+                03
+            </strong>
+            <span>
+                India Delivery
+            </span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <a href="#home" class="brand-logo footer-logo">
+                <span class="brand-main">VELORA</span>
+                <span class="brand-sub">STYLE 14</span>
+            </a>
+
+            <p>
+                Modern fashion for every version of you.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                SHOP
+            </h4>
+
+            <a href="#new-arrivals">
+                New Arrivals
+            </a>
+
+            <a href="#trends">
+                Trending
+            </a>
+
+            <a href="#collections">
+                Collections
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                HELP
+            </h4>
+
+            <a href="#" id="footerSizeGuide">
+                Size Guide
+            </a>
+
+            <a href="#" id="footerDelivery">
+                Delivery
+            </a>
+
+            <a href="#" id="footerExchange">
+                Exchange
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                CONNECT
+            </h4>
+
+            <a href="https://instagram.com/velora_style14"
+               target="_blank"
+               rel="noopener noreferrer">
+                Instagram
+            </a>
+
+            <button id="footerAiButton">
+                Ask Velora AI
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Velora Style 14
+        </span>
+
+        <span>
+            Made for women, with ✦
+        </span>
+
+    </div>
+
+</footer>
+
+</main>
+
+
+<!-- =========================================================
+     PRODUCT MODAL
+========================================================= -->
+
+<div class="modal-backdrop" id="productModal">
+
+    <div class="product-modal">
+
+        <button class="modal-close"
+                id="closeProductModal">
+            ×
+        </button>
+
+        <div class="modal-product-image">
+
+            <img id="modalProductImage"
+                 src=""
+                 alt="">
+
+        </div>
+
+        <div class="modal-product-content">
+
+            <span class="eyebrow"
+                  id="modalProductCategory">
+                PRODUCT
+            </span>
+
+            <h2 id="modalProductName">
+                Product Name
+            </h2>
+
+            <div class="modal-price"
+                 id="modalProductPrice">
+                ₹0
+            </div>
+
+            <p id="modalProductDescription">
+                Product description
+            </p>
+
+            <div class="modal-detail">
+
+                <strong>
+                    Available Sizes
+                </strong>
+
+                <div id="modalSizes"
+                     class="size-options">
+                </div>
+
+            </div>
+
+            <div class="modal-detail">
+
+                <strong>
+                    Colors
+                </strong>
+
+                <span id="modalColors">
+                </span>
+
+            </div>
+
+            <div class="modal-detail">
+
+                <strong>
+                    Occasion
+                </strong>
+
+                <span id="modalOccasion">
+                </span>
+
+            </div>
+
+            <button class="primary-button modal-order-button"
+                    id="modalOrderButton">
+                Order via Instagram →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     AI CHAT
+========================================================= -->
+
+<button class="ai-floating-button"
+        id="aiFloatingButton"
+        aria-label="Open Velora AI">
+
+    <span class="ai-button-icon">
+        ✦
+    </span>
+
+    <span class="ai-button-text">
+        Ask Velora AI
+    </span>
+
+</button>
+
+
+<div class="ai-chat-window"
+     id="aiChatWindow"
+     aria-hidden="true">
+
+    <div class="ai-chat-header">
+
+        <div class="ai-profile">
+
+            <div class="ai-avatar">
+                ✦
+            </div>
+
+            <div>
+
+                <strong>
+                    Velora AI
+                </strong>
+
+                <span>
+                    Personal Fashion Stylist
+                </span>
+
+            </div>
+
+        </div>
+
+        <button id="closeAiChat"
+                class="ai-close"
+                aria-label="Close chat">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="ai-chat-body"
+         id="chatBox">
+
+        <div class="ai-welcome-message">
+
+            <div class="chat-avatar">
+                ✦
+            </div>
+
+            <div class="chat-bubble">
+
+                <strong>
+                    Hey gorgeous ✨
+                </strong>
+
+                <p>
+                    I'm Velora AI — your personal fashion
+                    stylist. Tell me what you're looking for
+                    and I'll help you find the perfect look.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="chat-suggestions">
+
+            <button class="suggestion-chip">
+                Party outfit
+            </button>
+
+            <button class="suggestion-chip">
+                Casual look
+            </button>
+
+            <button class="suggestion-chip">
+                Office outfit
+            </button>
+
+            <button class="suggestion-chip">
+                Help me choose a size
+            </button>
+
+        </div>
+
+        <div class="typing-indicator"
+             id="typingIndicator">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+
+    <div class="ai-chat-footer">
+
+        <textarea
+            id="userInput"
+            rows="1"
+            placeholder="Ask me about outfits..."
+            aria-label="Message Velora AI"
+        ></textarea>
+
+        <button id="sendBtn"
+                aria-label="Send message">
+            ↑
+        </button>
+
+    </div>
+
+    <div class="ai-chat-note">
+        Velora AI can help with styling, sizes & products.
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    window.VELORA_PRODUCTS = [
+        {
+            id: 1,
+            name: "Black Satin Midi Dress",
+            category: "Dress",
+            price: 1499,
+            sizes: ["S", "M", "L", "XL"],
+            colors: ["Black"],
+            occasion: "Party",
+            stock: true,
+            image: "{{ url_for('static', filename='images/black_satin.jpg') }}",
+            description: "Elegant satin midi dress perfect for parties and evening outings."
+        },
+        {
+            id: 2,
+            name: "Pink Floral Maxi Dress",
+            category: "Dress",
+            price: 1699,
+            sizes: ["S", "M", "L"],
+            colors: ["Pink"],
+            occasion: "Vacation",
+            stock: true,
+            image: "{{ url_for('static', filename='images/pink_floral.jpg') }}",
+            description: "Lightweight floral maxi dress for vacations and brunch dates."
+        },
+        {
+            id: 3,
+            name: "Oversized White Shirt",
+            category: "Top",
+            price: 899,
+            sizes: ["M", "L", "XL"],
+            colors: ["White"],
+            occasion: "Casual",
+            stock: true,
+            image: "{{ url_for('static', filename='images/white_shirt.jpg') }}",
+            description: "Classic oversized shirt with a modern minimalist look."
+        },
+        {
+            id: 4,
+            name: "Blue High Waist Jeans",
+            category: "Jeans",
+            price: 1299,
+            sizes: ["28", "30", "32", "34"],
+            colors: ["Blue"],
+            occasion: "Casual",
+            stock: true,
+            image: "{{ url_for('static', filename='images/blue_jeans.jpg') }}",
+            description: "Comfortable high-waist jeans for everyday wear."
+        },
+        {
+            id: 5,
+            name: "Beige Co-ord Set",
+            category: "Co-ord Set",
+            price: 1999,
+            sizes: ["S", "M", "L"],
+            colors: ["Beige"],
+            occasion: "Office",
+            stock: true,
+            image: "{{ url_for('static', filename='images/beige_coord.jpg') }}",
+            description: "Elegant co-ord set suitable for office and semi-formal events."
+        }
+    ];
+
+</script>
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </body>
 </html>

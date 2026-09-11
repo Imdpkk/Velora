@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Black Satin Midi Dress",
+    "category": "Dress",
+    "price": 1499,
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Black"],
+    "occasion": "Party",
+    "stock": true,
+    "image": "black_satin.jpg",
+    "description": "Elegant satin midi dress perfect for parties and evening outings."
+  },
+  {
+    "id": 2,
+    "name": "Pink Floral Maxi Dress",
+    "category": "Dress",
+    "price": 1699,
+    "sizes": ["S", "M", "L"],
+    "colors": ["Pink"],
+    "occasion": "Vacation",
+    "stock": true,
+    "image": "pink_floral.jpg",
+    "description": "Lightweight floral maxi dress for vacations and brunch dates."
+  },
+  {
+    "id": 3,
+    "name": "Oversized White Shirt",
+    "category": "Top",
+    "price": 899,
+    "sizes": ["M", "L", "XL"],
+    "colors": ["White"],
+    "occasion": "Casual",
+    "stock": true,
+    "image": "white_shirt.jpg",
+    "description": "Classic oversized shirt with a modern minimalist look."
+  },
+  {
+    "id": 4,
+    "name": "Blue High Waist Jeans",
+    "category": "Jeans",
+    "price": 1299,
+    "sizes": ["28", "30", "32", "34"],
+    "colors": ["Blue"],
+    "occasion": "Casual",
+    "stock": true,
+    "image": "blue_jeans.jpg",
+    "description": "Comfortable high-waist jeans for everyday wear."
+  },
+  {
+    "id": 5,
+    "name": "Beige Co-ord Set",
+    "category": "Co-ord Set",
+    "price": 1999,
+    "sizes": ["S", "M", "L"],
+    "colors": ["Beige"],
+    "occasion": "Office",
+    "stock": true,
+    "image": "beige_coord.jpg",
+    "description": "Elegant co-ord set suitable for office and semi-formal events."
+  }
+]
