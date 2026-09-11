@@ -227,8 +227,6 @@ The AI layer is the core experience of Velora.
                        │
                        ▼
               Fashion Response
----
-
 <div align="center">
 
 ## ✦ Created & Developed By
