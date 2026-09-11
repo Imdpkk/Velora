@@ -1,519 +1,1067 @@
-👗 Velora Style 14 — AI-Powered Fashion Website
+<div align="center">
 
-A modern fashion-brand website with an integrated AI stylist that helps customers discover products and choose outfits based on their style, occasion, budget, and preferences.
 
-6
-🌐 Live Website
 
-Velora Style 14:
-Open the live website
+\# ✦ VELORA STYLE 14
 
-GitHub Repository:
-View the source code on GitHub
 
-✨ Overview
 
-Velora Style 14 is a fashion-focused web application designed to provide a premium online shopping and styling experience.
+\### AI-Powered Fashion Experience
 
-The website combines a modern fashion storefront with an AI-powered personal stylist, allowing visitors to browse collections, discover new arrivals, explore trends, filter products by mood or occasion, and interact with Velora AI for personalized fashion recommendations.
 
-The project is built with Python, Flask, JavaScript, HTML, CSS, and Google Gemini AI, and is deployed using Vercel.
 
-The goal is to create a fashion platform where customers don't just browse products—they can also ask an AI stylist for help deciding what to wear, what matches, what fits an occasion, and what works within their budget.
+A modern fashion-brand website combining curated collections,  
 
-🎯 Key Features
-🛍️ Fashion Storefront
-Premium fashion-brand homepage
-Hero section
-New Arrivals
-Trending collection
-Shop by Mood
-Product cards
-Product detail modal
-Product filtering
-Responsive navigation
-Search functionality
-🤖 Velora AI Stylist
+smart product discovery, and an AI-powered personal stylist.
 
-The website includes an AI-powered fashion assistant capable of helping customers with:
+
+
+<br>
+
+
+
+<a href="https://velora-xi-woad.vercel.app/">
+
+&#x20; <img src="https://img.shields.io/badge/🌐\_LIVE\_DEMO-Velora\_Style\_14-111111?style=for-the-badge" alt="Live Demo">
+
+</a>
+
+\&nbsp;
+
+<a href="https://github.com/Imdpkk/Velora">
+
+&#x20; <img src="https://img.shields.io/badge/💻\_SOURCE\_CODE-GitHub-111111?style=for-the-badge\&logo=github" alt="GitHub">
+
+</a>
+
+
+
+<br><br>
+
+
+
+<img src="https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square\&logo=python\&logoColor=white">
+
+<img src="https://img.shields.io/badge/Flask-Backend-000000?style=flat-square\&logo=flask\&logoColor=white">
+
+<img src="https://img.shields.io/badge/Gemini-AI-4285F4?style=flat-square\&logo=google\&logoColor=white">
+
+<img src="https://img.shields.io/badge/JavaScript-Frontend-F7DF1E?style=flat-square\&logo=javascript\&logoColor=black">
+
+<img src="https://img.shields.io/badge/Vercel-Deployed-000000?style=flat-square\&logo=vercel\&logoColor=white">
+
+
+
+</div>
+
+
+
+<br>
+
+
+
+\---
+
+
+
+\## ✦ About Velora
+
+
+
+\*\*Velora Style 14\*\* is a modern fashion web experience built around one simple idea:
+
+
+
+> \*\*Shopping for fashion should feel personal.\*\*
+
+
+
+Instead of presenting customers with only a traditional product catalog, Velora combines a premium fashion storefront with an \*\*AI personal stylist\*\*.
+
+
+
+Visitors can explore collections, discover new arrivals, browse trends, search products, shop by mood, and ask \*\*Velora AI\*\* for styling recommendations.
+
+
+
+The AI assistant can understand requests such as:
+
+
+
+```text
+
+"I need a party outfit under ₹2000"
+
+
+
+"Show me something casual"
+
+
+
+"What should I wear to the office?"
+
+
+
+"Help me choose a size"
+
+
+
+"Show me your new arrivals"
+🌐 Live Experience
+
+<div align="center">
+
+👗 Visit Velora Style 14
+
+<a href="https://velora-xi-woad.vercel.app/"> <img src="https://img.shields.io/badge/OPEN\_WEBSITE-111111?style=for-the-badge\&logo=vercel\&logoColor=white" alt="Open Website"> </a>
+
+
+
+<br><br>
+
+
+
+Live: https://velora-xi-woad.vercel.app/
+
+
+
+</div>
+
+✦ Experience
+
+<table> <tr> <td width="50%" valign="top">
+
+🤖 AI Stylist
+
+
+
+Get personalized fashion suggestions through the Velora AI assistant.
+
+
 
 Outfit recommendations
+
 Occasion-based styling
-Casual outfit suggestions
-Party outfit suggestions
-Office outfit suggestions
+
+Budget-based suggestions
+
+Casual styling
+
+Party styling
+
+Office styling
+
 Vacation styling
-Budget-based recommendations
+
+Size assistance
+
+</td> <td width="50%" valign="top">
+
+🛍️ Fashion Storefront
+
+
+
+A premium storefront designed around the fashion-shopping experience.
+
+
+
+New Arrivals
+
+Trending styles
+
 Product discovery
-Size-related questions
-Fashion and styling advice
-Catalog-related questions
 
-Example:
+Product details
 
-User:
-I need a party outfit under ₹2000
+Search
 
-Velora AI:
-Black Satin Midi Dress — ₹1,499
-Perfect for parties and evening outings.
+Category filtering
 
-The AI uses the available Velora product catalog rather than inventing products.
+Mood-based shopping
 
-🔎 Product Search
+Instagram ordering
 
-Users can search the available catalog by:
+</td> </tr> <tr> <td width="50%" valign="top">
+
+🔎 Smart Discovery
+
+
+
+Customers can discover products through:
+
+
 
 Product name
+
 Category
-Occasion
+
 Color
+
+Occasion
+
 Description
-🆕 New Arrivals
 
-The website provides a dedicated New Arrivals section using products from the current catalog.
+Budget
 
-🔥 Trending
+Fashion intent
 
-The Trending section highlights selected products from the available collection.
+</td> <td width="50%" valign="top">
 
-🎭 Shop by Mood
+📱 Responsive Experience
 
-Customers can explore products based on different fashion moods:
 
-Party Girl
-Casual Chic
-Work Edit
-Vacation Mode
-📱 Responsive Design
 
-The website is designed to work across:
+Designed to work across:
+
+
 
 Desktop
+
 Laptop
+
 Tablet
+
 Mobile
-📩 Instagram Ordering
 
-The current version uses Instagram as the primary ordering/contact channel.
 
-Customers can select a product and continue the purchase conversation through the Velora Instagram account.
 
-Instagram:
+The layout adapts navigation, product grids, AI chat, and content for smaller screens.
 
-@velora_style14
 
-🧠 AI Architecture
 
-The AI system follows a hybrid approach.
+</td> </tr> </table>
 
-Instead of sending every customer message directly to Gemini, the application first checks whether the request can be handled using the local Velora product catalog and predefined logic.
+✦ AI Fashion Stylist
 
-Request flow
+
+
+Velora's AI assistant is not designed to behave like a generic chatbot.
+
+
+
+It combines intent detection, catalog search, conversation context, predefined responses, and Gemini AI.
+
+
+
+How it works
+
+&#x20;                        CUSTOMER
+
+&#x20;                           │
+
+&#x20;                           ▼
+
+&#x20;                   ┌───────────────┐
+
+&#x20;                   │ Velora Website│
+
+&#x20;                   └───────┬───────┘
+
+&#x20;                           │
+
+&#x20;                           ▼
+
+&#x20;                    POST /chat
+
+&#x20;                           │
+
+&#x20;                           ▼
+
+&#x20;                 ┌──────────────────┐
+
+&#x20;                 │  Velora Chatbot  │
+
+&#x20;                 └────────┬─────────┘
+
+&#x20;                          │
+
+&#x20;            ┌─────────────┼─────────────┐
+
+&#x20;            │             │             │
+
+&#x20;            ▼             ▼             ▼
+
+&#x20;      Intent         Product        Chat Memory
+
+&#x20;      Detection      Search         \& Context
+
+&#x20;            │             │             │
+
+&#x20;            └─────────────┼─────────────┘
+
+&#x20;                          │
+
+&#x20;                          ▼
+
+&#x20;                   ┌─────────────┐
+
+&#x20;                   │ Gemini AI   │
+
+&#x20;                   └──────┬──────┘
+
+&#x20;                          │
+
+&#x20;                          ▼
+
+&#x20;                Personalized Response
+
+&#x20;                          │
+
+&#x20;                          ▼
+
+&#x20;                      CUSTOMER
+
+Example
+
+
+
 Customer
-   │
-   ▼
-Website Chat Interface
-   │
-   ▼
-Flask /chat API
-   │
-   ▼
-Velora AI Chatbot
-   │
-   ├── Intent Detection
-   │
-   ├── Product Catalog Search
-   │
-   ├── Context / Chat Memory
-   │
-   ├── Predefined Fashion Responses
-   │
-   └── Gemini AI
-   │
-   ▼
-Personalized Response
-   │
-   ▼
-Customer
 
-This approach helps keep product recommendations grounded in the actual Velora catalog.
 
-🛠️ Technology Stack
-Technology	Purpose
-Python	Backend programming
-Flask	Web framework and API
-Google Gemini	AI-powered fashion assistant
-HTML5	Website structure
-CSS3	Styling and responsive design
-JavaScript	Frontend interactions
-JSON	Product, FAQ and configuration data
-Git	Version control
-GitHub	Source-code hosting
-Vercel	Cloud deployment
-📁 Project Structure
-Velora/
-│
-├── api/
-│   ├── __init__.py
-│   ├── index.py
-│   ├── chatbot.py
-│   ├── helpers.py
-│   ├── products.py
-│   └── test.py
-│
-├── config/
-│   ├── constants.py
-│   └── prompt.py
-│
-├── data/
-│   ├── faq.json
-│   ├── products.json
-│   └── settings.json
-│
-├── static/
-│   ├── css/
-│   │   ├── style.css
-│   │   ├── animations.css
-│   │   └── responsive.css
-│   │
-│   ├── js/
-│   │   ├── script.js
-│   │   ├── chat.js
-│   │   └── ui.js
-│   │
-│   ├── images/
-│   │   ├── black_satin.jpg
-│   │   ├── pink_floral.jpg
-│   │   ├── white_shirt.jpg
-│   │   ├── blue_jeans.jpg
-│   │   └── beige_coord.jpg
-│   │
-│   ├── fonts/
-│   ├── icons/
-│   ├── sounds/
-│   └── videos/
-│
-├── templates/
-│   ├── components/
-│   ├── layouts/
-│   └── index.html
-│
-├── uploads/
-│
-├── .env
-├── .gitignore
-├── requirements.txt
-├── README.md
-└── vercel.json
-🛒 Current Product Catalog
 
-The current prototype catalog contains five products:
+I need a party outfit under ₹2000.
 
-Product	Category	Price	Occasion
-Black Satin Midi Dress	Dress	₹1,499	Party
-Pink Floral Maxi Dress	Dress	₹1,699	Vacation
-Oversized White Shirt	Top	₹899	Casual
-Blue High Waist Jeans	Jeans	₹1,299	Casual
-Beige Co-ord Set	Co-ord Set	₹1,999	Office
 
-Product information is stored in:
+
+Velora AI
+
+
+
+Black Satin Midi Dress — ₹1,499
+
+Elegant satin midi dress perfect for parties and evening outings.
+
+
+
+The assistant is designed to avoid recommending products that do not exist in the current catalog.
+
+
+
+✦ Current Collection
+
+
+
+The current catalog contains:
+
+
+
+<table> <tr> <th>Product</th> <th>Category</th> <th>Price</th> <th>Occasion</th> </tr> <tr> <td>Black Satin Midi Dress</td> <td>Dress</td> <td>₹1,499</td> <td>Party</td> </tr> <tr> <td>Pink Floral Maxi Dress</td> <td>Dress</td> <td>₹1,699</td> <td>Vacation</td> </tr> <tr> <td>Oversized White Shirt</td> <td>Top</td> <td>₹899</td> <td>Casual</td> </tr> <tr> <td>Blue High Waist Jeans</td> <td>Jeans</td> <td>₹1,299</td> <td>Casual</td> </tr> <tr> <td>Beige Co-ord Set</td> <td>Co-ord Set</td> <td>₹1,999</td> <td>Office</td> </tr> </table>
+
+
+
+Product information is maintained in:
+
+
 
 data/products.json
 
-This makes the catalog easy to update without changing the core application architecture.
 
-⚙️ Backend
 
-The Flask backend provides the main application and AI endpoint.
+This allows the catalog to be updated independently from the main application logic.
 
-Main routes
+
+
+✦ Shop by Mood
+
+
+
+Velora organizes fashion discovery around different style contexts:
+
+
+
+<div align="center">
+
+✦ Party Girl	✦ Casual Chic
+
+Evening \& party looks	Everyday styling
+
+✦ Work Edit	✦ Vacation Mode
+
+Office \& semi-formal	Vacation \& relaxed looks
+
+</div>
+
+✦ Technology Stack
+
+<div align="center">
+
+Layer	Technology
+
+Frontend	HTML5, CSS3, JavaScript
+
+Backend	Python + Flask
+
+AI	Google Gemini
+
+Data	JSON
+
+API	Flask REST endpoint
+
+Version Control	Git + GitHub
+
+Deployment	Vercel
+
+Environment Management	Python venv + .env
+
+</div>
+
+✦ Architecture
+
+Velora
+
+│
+
+├── Frontend
+
+│   ├── HTML
+
+│   ├── CSS
+
+│   └── JavaScript
+
+│
+
+├── Flask Backend
+
+│   ├── Routes
+
+│   ├── Chat API
+
+│   └── Application Logic
+
+│
+
+├── AI Layer
+
+│   ├── Intent Detection
+
+│   ├── Product Recommendations
+
+│   ├── Chat Memory
+
+│   └── Gemini AI
+
+│
+
+└── Data Layer
+
+&#x20;   ├── Products
+
+&#x20;   ├── FAQ
+
+&#x20;   ├── Settings
+
+&#x20;   └── Configuration
+
+✦ Project Structure
+
+Velora/
+
+│
+
+├── api/
+
+│   ├── \_\_init\_\_.py
+
+│   ├── index.py              # Flask application
+
+│   ├── chatbot.py            # AI chatbot \& styling logic
+
+│   ├── helpers.py            # Utility functions \& chat memory
+
+│   ├── products.py           # Product management
+
+│   └── test.py               # Testing utilities
+
+│
+
+├── config/
+
+│   ├── constants.py          # Application constants
+
+│   └── prompt.py             # AI prompt configuration
+
+│
+
+├── data/
+
+│   ├── faq.json              # Frequently asked questions
+
+│   ├── products.json         # Product catalog
+
+│   └── settings.json         # Application settings
+
+│
+
+├── static/
+
+│   ├── css/
+
+│   │   ├── style.css
+
+│   │   ├── animations.css
+
+│   │   └── responsive.css
+
+│   │
+
+│   ├── js/
+
+│   │   ├── script.js
+
+│   │   ├── chat.js
+
+│   │   └── ui.js
+
+│   │
+
+│   ├── images/
+
+│   │   ├── black\_satin.jpg
+
+│   │   ├── pink\_floral.jpg
+
+│   │   ├── white\_shirt.jpg
+
+│   │   ├── blue\_jeans.jpg
+
+│   │   └── beige\_coord.jpg
+
+│   │
+
+│   ├── fonts/
+
+│   ├── icons/
+
+│   ├── sounds/
+
+│   └── videos/
+
+│
+
+├── templates/
+
+│   ├── components/
+
+│   ├── layouts/
+
+│   └── index.html
+
+│
+
+├── uploads/
+
+│
+
+├── .env                    # Local secrets (not committed)
+
+├── .gitignore
+
+├── requirements.txt
+
+├── README.md
+
+└── vercel.json
+
+✦ Backend API
+
 GET /
 
-Loads the main Velora website.
+
+
+Serves the main Velora website.
+
+
 
 POST /chat
 
-Receives a customer message and returns an AI response.
 
-Example request:
 
-{
-  "message": "I need an office outfit"
-}
+Handles AI fashion conversations.
 
-Example response:
+
+
+Request
 
 {
-  "success": true,
-  "response": "For an office look, I recommend the Beige Co-ord Set..."
+
+&#x20; "message": "I need a casual outfit"
+
 }
+
+Response
+
+{
+
+&#x20; "success": true,
+
+&#x20; "response": "For a casual look, I recommend..."
+
+}
+
 GET /health
 
-Returns application health information.
 
-Example:
+
+Application health endpoint.
+
+
+
+Response
 
 {
-  "status": "running",
-  "service": "Velora AI",
-  "version": "2.0"
+
+&#x20; "status": "running",
+
+&#x20; "service": "Velora AI",
+
+&#x20; "version": "2.0"
+
 }
-🤖 Gemini Integration
 
-Velora AI uses Google's Gemini model for general fashion conversations and styling assistance.
+✦ Getting Started
 
-The application currently uses:
+Prerequisites
 
-gemini-2.5-flash
 
-The API key is loaded through an environment variable:
 
-GEMINI_API_KEY
-🔐 Security
+Make sure you have:
 
-Never commit the Gemini API key to GitHub.
 
-For local development, create:
 
-.env
+Python 3.x
 
-and add:
+Git
 
-GEMINI_API_KEY=your_api_key_here
+A Gemini API key
 
-The .env file is excluded from Git using .gitignore.
+1\. Clone the repository
 
-For production, the API key should be stored in the deployment platform's environment variables.
-
-🚀 Local Development
-1. Clone the repository
 git clone https://github.com/Imdpkk/Velora.git
 
-Move into the project:
-
 cd Velora
-2. Create a virtual environment
+
+2\. Create a virtual environment
+
 Windows
+
 python -m venv venv
+
+
 
 Activate it:
 
-venv\Scripts\activate
+
+
+venv\\Scripts\\activate
+
 macOS / Linux
+
 python3 -m venv venv
+
 source venv/bin/activate
-3. Install dependencies
+
+3\. Install dependencies
+
 pip install -r requirements.txt
-4. Configure environment variables
+
+4\. Configure environment variables
+
+
 
 Create a .env file in the project root:
 
-GEMINI_API_KEY=your_api_key_here
-5. Start the Flask application
+
+
+GEMINI\_API\_KEY=your\_gemini\_api\_key
+
+
+
+Never commit .env or your API key to GitHub.
+
+
+
+5\. Run locally
+
+
 
 From the project root:
 
+
+
 python -m api.index
 
-The application will be available at:
+
+
+The application will start at:
+
+
 
 http://127.0.0.1:5000
-🧪 Testing
 
-The project contains testing utilities under:
+✦ Environment Variables
 
-api/test.py
+Variable	Required	Description
 
-The main functionality that should be tested includes:
+GEMINI\_API\_KEY	✅	API key used for Gemini AI
 
-Homepage loading
-Product rendering
-Product search
-Product filtering
-AI chat
-Outfit recommendations
-Budget-based recommendations
-Size conversations
-New Arrivals
-Trending products
-Health endpoint
-Responsive interface
 
-Example AI queries:
 
-Show me your new arrivals
-I need a party outfit under ₹2000
-I need something casual
-What do you have for office?
-Help me choose a size
-☁️ Deployment
+For production deployments, configure this variable through the hosting platform's environment-variable settings.
 
-The application is deployed on Vercel.
 
-Deployment architecture:
+
+✦ Deployment
+
+
+
+Velora is deployed through Vercel and connected to the GitHub repository.
+
+
+
+Developer
+
+&#x20;   │
+
+&#x20;   ▼
+
+Git Push
+
+&#x20;   │
+
+&#x20;   ▼
+
+GitHub / main
+
+&#x20;   │
+
+&#x20;   ▼
+
+Vercel Deployment
+
+&#x20;   │
+
+&#x20;   ▼
+
+Production
+
+Deploy updates
+
+
+
+After making changes:
+
+
+
+git add .
+
+git commit -m "Update Velora"
+
+git push origin main
+
+
+
+The connected Vercel project can then deploy the updated main branch.
+
+
+
+✦ Security
+
+
+
+Velora follows basic application security practices.
+
+
+
+🔐 API Key Protection
+
+
+
+The Gemini API key is stored in environment variables rather than source code.
+
+
+
+The .gitignore file excludes:
+
+
+
+.env
+
+venv/
+
+\_\_pycache\_\_/
+
+\*.pyc
+
+Important
+
+
+
+Never do this:
+
+
+
+GEMINI\_API\_KEY = "your-secret-key"
+
+
+
+Never publish your API key in:
+
+
 
 GitHub
-   │
-   ▼
-Vercel
-   │
-   ▼
-Flask Application
-   │
-   ├── Website
-   ├── Product Catalog
-   └── AI Chat API
-          │
-          ▼
-       Gemini AI
 
-The GitHub repository is connected to Vercel, allowing new commits pushed to the main branch to trigger deployments.
+README files
 
-Production URL
+JavaScript
 
-Velora Style 14 — Live Website
+Screenshots
 
-🔄 Updating Products
+Public documentation
 
-Product information can be updated in:
+✦ Product Management
+
+
+
+Products are stored in:
+
+
 
 data/products.json
 
-A product follows this structure:
+
+
+Example:
+
+
 
 {
-  "id": 1,
-  "name": "Product Name",
-  "category": "Dress",
-  "price": 1499,
-  "sizes": ["S", "M", "L"],
-  "colors": ["Black"],
-  "occasion": "Party",
-  "stock": true,
-  "image": "product.jpg",
-  "description": "Product description."
+
+&#x20; "id": 1,
+
+&#x20; "name": "Product Name",
+
+&#x20; "category": "Dress",
+
+&#x20; "price": 1499,
+
+&#x20; "sizes": \["S", "M", "L"],
+
+&#x20; "colors": \["Black"],
+
+&#x20; "occasion": "Party",
+
+&#x20; "stock": true,
+
+&#x20; "image": "product.jpg",
+
+&#x20; "description": "Product description."
+
 }
 
-After changing product data:
 
-git add .
-git commit -m "Update product catalog"
-git push origin main
 
-Vercel can then deploy the updated version.
+This structure makes it straightforward to add new products and collections as the brand grows.
 
-🎨 Design Philosophy
 
-Velora follows a premium minimalist fashion aesthetic.
 
-The interface focuses on:
+✦ Testing Checklist
 
-Clean typography
-Neutral colors
-Large editorial imagery
-Generous whitespace
-Minimal visual clutter
-Responsive layouts
-Fashion-oriented interactions
-Simple navigation
-Premium brand presentation
 
-The design intentionally avoids making the AI assistant feel like a generic chatbot.
 
-🔮 Future Roadmap
+Before publishing a new version, verify:
 
-The current version is an initial production-ready foundation. Future improvements may include:
 
-🛍️ E-commerce
- Shopping cart
- Wishlist persistence
- Checkout
- Online payments
- Order management
- Order tracking
-👤 Customer Accounts
- Email authentication
- Google login
- OTP authentication
- Customer profiles
- Saved sizes
- Order history
-🤖 AI Improvements
- Personalized style profiles
- Image-based fashion recommendations
- AI outfit visualization
- More advanced product matching
- Conversation persistence
- Personalized recommendations based on previous interactions
-📦 Product Management
- Admin dashboard
- Add/edit/delete products
- Inventory management
- Product image management
- Dynamic collections
- Automated new-arrival updates
-📊 Business & Analytics
- Customer analytics
- Product performance analytics
- AI conversation analytics
- Conversion tracking
- Google Analytics / equivalent analytics
-🌐 Brand Infrastructure
- Custom domain
- SEO optimization
- Open Graph/social sharing
- Sitemap
- Structured product metadata
- Performance optimization
-🔐 Security Considerations
 
-The project follows basic security practices:
+Website
 
-API keys are stored using environment variables
-.env is excluded from Git
-Virtual environments are excluded from Git
-Python cache files are excluded
-Backend validates incoming chat requests
-Frontend user-generated content is escaped before rendering
+&#x20;Homepage loads
 
-Production deployments should additionally consider:
+&#x20;Navigation works
 
-Rate limiting
-Authentication for administrative functions
-Secure payment processing
-Database security
-Input validation
-Monitoring and logging
-API abuse protection
-📌 Project Status
+&#x20;Mobile menu works
 
-Current Version: 2.0
+&#x20;Product cards load
 
-Status: 🟢 Live / Active Development
+&#x20;Product modal works
 
-Velora is currently operating as a fashion-brand website with an AI styling assistant and product discovery experience.
+&#x20;Search works
 
-The product catalog, branding, ordering workflow, and e-commerce capabilities will continue to evolve as the brand grows.
+&#x20;Filters work
 
-👨‍💻 Author
+&#x20;Mood sections work
+
+&#x20;Responsive layout works
+
+AI
+
+&#x20;AI chat opens
+
+&#x20;Messages send correctly
+
+&#x20;Product recommendations are relevant
+
+&#x20;Budget queries work
+
+&#x20;Occasion queries work
+
+&#x20;Size questions work
+
+&#x20;New-arrival queries work
+
+&#x20;Unknown requests are handled gracefully
+
+Production
+
+&#x20;Environment variables configured
+
+&#x20;API key is not committed
+
+&#x20;/health works
+
+&#x20;Vercel deployment succeeds
+
+&#x20;Production URL works
+
+✦ Roadmap
+
+
+
+Velora is actively evolving from a fashion showcase into a more complete fashion-commerce platform.
+
+
+
+🛍️ Commerce
+
+&#x20;Shopping cart
+
+&#x20;Wishlist persistence
+
+&#x20;Checkout
+
+&#x20;Online payments
+
+&#x20;Order management
+
+&#x20;Order tracking
+
+👤 Accounts
+
+&#x20;User registration
+
+&#x20;Email authentication
+
+&#x20;Google authentication
+
+&#x20;OTP authentication
+
+&#x20;Customer profiles
+
+&#x20;Saved sizes
+
+&#x20;Order history
+
+🤖 AI
+
+&#x20;Personalized style profiles
+
+&#x20;Image-based styling
+
+&#x20;AI outfit visualization
+
+&#x20;Advanced product matching
+
+&#x20;Persistent conversations
+
+&#x20;Personalized recommendations
+
+📦 Administration
+
+&#x20;Admin dashboard
+
+&#x20;Product management
+
+&#x20;Inventory management
+
+&#x20;Image management
+
+&#x20;Dynamic collections
+
+&#x20;Order management
+
+📊 Analytics
+
+&#x20;Product analytics
+
+&#x20;Customer analytics
+
+&#x20;AI conversation analytics
+
+&#x20;Conversion tracking
+
+&#x20;Performance monitoring
+
+🌐 Brand
+
+&#x20;Custom domain
+
+&#x20;Advanced SEO
+
+&#x20;Sitemap
+
+&#x20;Social sharing metadata
+
+&#x20;Structured product data
+
+&#x20;Performance optimization
+
+✦ Brand
+
+<div align="center">
+
+VELORA STYLE 14
+
+Fashion · Style · Intelligence
+
+<br>
+
+
+
+Your style, thoughtfully curated.
+
+
+
+<br> <a href="https://velora-xi-woad.vercel.app/"> <img src="https://img.shields.io/badge/EXPLORE\_VELORA-111111?style=for-the-badge" alt="Explore Velora"> </a> </div>
+
+👨‍💻 Developer
+
+<div align="center">
 
 Deepak Vishwakarma
 
-GitHub:
-@Imdpkk
+<a href="https://github.com/Imdpkk"> <img src="https://img.shields.io/badge/GitHub-Imdpkk-181717?style=for-the-badge\&logo=github" alt="GitHub"> </a>
 
-Project:
-Velora Style 14
 
-📄 License
 
-This project is currently maintained as a private brand/application project for Velora Style 14.
+<br><br>
 
-Unless otherwise specified, the source code, branding, product information, images, and other project assets should not be reused commercially without permission.
 
-⭐ Velora Style 14
 
-Fashion. Style. Intelligence.
+Built with Python, Flask, JavaScript \& Gemini AI.
 
-Your style, thoughtfully curated.
+
+
+</div>
+
+<div align="center">
+
+✦ Velora Style 14
+
+
+
+Discover your style. Find your look.
+
+
+
+</div> ```
+
